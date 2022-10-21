@@ -178,4 +178,27 @@ main {
   .client-icon {
     justify-content: center;
   }
+  
+}
+
+@media (max-width: 400px) {
+  #menu {
+    display: block;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+  }
+  #menu-closed {
+    display: none;
+  }
+  #list-nav {
+    display: none;
+  }
+  #list-nav.visible {
+    display: block;
+  }
 }
