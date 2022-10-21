@@ -191,6 +191,7 @@ main {
     font-weight: bold;
     position: absolute;
     right: 20px;
+    z-index: 9999;
   }
   #menu-closed {
     display: none;
@@ -198,7 +199,46 @@ main {
   #list-nav {
     display: none;
   }
+  .list-nav ul {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    background-color: #fff;
+    width: 50%;
+    margin-left: 0;
+    font-size: 16px;
+    height: 100%;
+    /* opacity: 0.8; */
+    gap: 20px;
+  }
+  .list-nav ul li, .list-nav .states img {
+    font-weight: 500;
+    display: block;
+    position: relative;
+    top: -420px;
+  }
   #list-nav.visible {
     display: block;
+  }
+  main {
+    padding: 0 5px;
+  }
+  .container-main {
+    height: 90vh;
+  }
+  .mobile {
+    width: 100%;
+  }
+  .description h1 {
+    font-size: 30px;
+    width: 50vh;
+  }
+  .client-icon {
+    margin-top: 50px;
+  }
+  .client-icon img {
+    width: 60px;
+    gap: 10px;
   }
 }
