@@ -11,7 +11,7 @@
   <header class="header">
     <nav class="nav">
         <img src="./images/logo.svg" alt="logo">
-        <div class="list-nav">
+        <div id="list-nav" class="list-nav">
           <ul>
             <div class="states">
               <li>Features</li>
@@ -28,6 +28,10 @@
             <button>Login</button>
             <button>Register</button>
           </div>
+          <button id="menu">
+            <span id="menu-open">&#9776;</span>
+            <span id="menu-closed">X</span>
+          </button>
         </div>
     </nav>
   </header>
@@ -48,12 +52,9 @@
       <div class="image">
         <img src="./images/image-hero-desktop.png" alt="imagen-fondo">
       </div>
+      <div class="mobile"></div>
     </section>
   </main>
-  
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+  <script src="./index.js"></script>
 </body>
 </html>

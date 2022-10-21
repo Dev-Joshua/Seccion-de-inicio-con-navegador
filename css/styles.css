@@ -61,6 +61,9 @@ body {
 .buttons button:hover {
   text-transform: uppercase;
 }
+#menu {
+  display: none;
+}
 main {
   padding: 0px 100px;
 }
@@ -119,4 +122,60 @@ main {
   object-fit: contain;
   width: 90%;
   height: 80%;
+}
+
+@media (max-width: 800px) {
+  /* .nav {
+    display: inline;
+  } */
+  #list-nav {
+    width: 100%;
+    display: inline;
+  }
+  .buttons {
+    display: none;
+  }
+  .nav {
+    align-items: center;
+  }
+  .list-nav ul {
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .container-main {
+    flex-direction: column-reverse;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    gap: 5px;
+  }
+  .image  {
+    display: none;
+  }
+  .mobile{
+    background-image: url("../images/image-hero-mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 65%;
+    height: 50%;
+  }
+  .description {
+    gap: 20px;
+    width: 80%;
+    align-items: center;
+  }
+  .description h1 {
+    width: 60vh;
+    font-size: 35px;
+  }
+  .description p {
+    font-size: 14px;
+    width: 50vh;
+  }
+  .client-icon {
+    justify-content: center;
+  }
 }
