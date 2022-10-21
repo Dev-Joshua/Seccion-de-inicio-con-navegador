@@ -196,6 +196,12 @@ main {
   #menu-closed {
     display: none;
   }
+  #menu.salir #menu-open {
+    display: none;
+  }
+  #menu.salir #menu-closed {
+    display: block;
+  }
   #list-nav {
     display: none;
   }
