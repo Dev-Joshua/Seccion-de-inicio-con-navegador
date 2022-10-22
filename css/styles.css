@@ -36,6 +36,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   height: 20px;
+  width: 80px;
 }
 .states {
   display: flex;
@@ -52,16 +53,31 @@ body {
 #list.salir #list {
   display: block;
 }
-#open-list.visible {
+.states .open-list.visible {
   display: flex;
   margin: 0;
   margin-top: 20px;
   margin-left: -90px;
   /* padding: 5px; */
   /* gap: 20px; */
+  border-radius: 10px;
   height: auto;
   width: 180px;
   box-shadow: 5px 5px 5px hsl(0, 0%, 41%);
+  z-index: 999;
+}
+.states .list__company.visible {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  padding: 15px;
+  height: auto;
+  gap: 20px;
+  box-shadow: 5px 5px 5px hsl(0deg 0% 41%);
+  margin-top: 20px;
+  border-radius: 10px;
+  margin-left: 0px;
+  z-index: 999;
 }
 .buttons button {
   height: 50px;
@@ -83,7 +99,7 @@ body {
 #menu {
   display: none;
 }
-.states .open-list {
+.states .open-list, .states .list__compnay {
   /* width: 150px; */
   display: flex;
   background-color: #fff;
@@ -101,18 +117,21 @@ body {
   width: 20px;
   height: 20px;
 }
+.states .list__company {
+  display: none;
+}
 .states .open-list {
   display: none;
 }
 .arrow .list__arrow {
-  transform: rotate(270deg);
+  transform: rotate(180deg);
 }
 .list__arrow {
   transition: transform .3s;
 }
 main {
   padding: 50px;
-  margin-top: 80px;
+  margin-top: -80px;
 }
 .container-main {
   display: flex;
@@ -130,6 +149,7 @@ main {
   font-size: 70px;
   width: 470px;
   font-weight: bold;
+  z-index: -1;
 }
 .description p {
   font-size: 18px;
@@ -171,11 +191,104 @@ main {
   height: 80%;
 }
 
+@media (max-width: 1024px) {
+  main {
+    margin: 0;
+  }
+  .list-nav ul {
+    gap: 5px;
+  }
+  .image {
+    margin: 0;
+  }
+}
+
 @media (max-width: 800px) {
-  /* .nav {
-    display: inline;
-  } */
+  #menu {
+    display: block;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    z-index: 9999;
+  }
+  #menu-closed {
+    display: none;
+  }
+  #menu.salir #menu-open {
+    display: none;
+  }
+  #menu.salir #menu-closed {
+    display: block;
+  }
   #list-nav {
+    display: none;
+  }
+  .list-nav ul {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: -15px;
+    background-color: #fff;
+    width: 30%;
+    margin-left: 0;
+    font-size: 16px;
+    height: 100%;
+    /* opacity: 0.8; */
+    gap: 20px;
+    z-index: 1;
+  }
+  .list-nav ul li, .list-nav .states img {
+    font-weight: bold;
+    display: block;
+    position: relative;
+    top: 70px;
+    font-size: 18px;
+    left: 20px;
+    margin-top: 20px;
+    width: 60px;
+  }
+  .list-nav .open-list div img {
+    width: 15px;
+    top: 0px;
+    margin-top: 15px;
+  }
+  #list-nav.visible {
+    display: block;
+  }
+  .states .open-list.visible {
+    margin-left: 0;
+    margin-right: -120px;
+    gap: 5px;
+    box-shadow: none;
+    top: 15px;
+  }
+  .states .list__company.visible {
+    margin-left: 40px;
+    height: 130px;
+    gap: 60px;
+    padding: 0;
+    margin-right: -40px;
+    box-shadow: none;
+    top: 15px;
+  }
+  .states .open-list div {
+    margin-left: -40px;
+  }
+  .states ul li {
+    font-size: 12px;
+    width: 90px;
+    margin-top: -50px;
+  }
+  .states .list__company li {
+    font-size: 16px;
+    width: 100px;
+    
+  }
+  /* #list-nav {
     width: 100%;
     display: inline;
   }
@@ -188,7 +301,7 @@ main {
   .list-nav ul {
     gap: 10px;
     justify-content: flex-end;
-  }
+  } */
   .container-main {
     flex-direction: column-reverse;
     height: 100vh;
@@ -259,24 +372,63 @@ main {
     flex-direction: column;
     position: absolute;
     right: 0;
-    top: 380px;
+    top: 0;
     background-color: #fff;
     width: 50%;
     margin-left: 0;
     font-size: 16px;
-    height: 60%;
+    height: 100%;
     /* opacity: 0.8; */
     gap: 20px;
-    z-index: 9999;
+    z-index: 1;
   }
   .list-nav ul li, .list-nav .states img {
-    font-weight: 500;
+    font-weight: bold;
     display: block;
     position: relative;
-    top: -420px;
+    top: 70px;
+    font-size: 14px;
+    left: 20px;
+    margin-top: 20px;
+    width: 50px;
+  }
+  .list-nav .open-list div img {
+    width: 10px;
+    top: 0px;
   }
   #list-nav.visible {
     display: block;
+  }
+  .states .open-list.visible {
+    margin-left: 0;
+    margin-right: -90px;
+    gap: 5px;
+    width: 171px;
+    box-shadow: none;
+    padding: 0;
+    align-items: center;
+    height: 40vh;
+  }
+  .states .list__company.visible {
+    height: 40vh;
+    gap: 55px;
+    padding: 0;
+    margin-right: -90px;
+    box-shadow: none;
+    width: 170px;
+  }
+  .states .open-list div {
+    margin-left: -40px;
+  }
+  .states ul li {
+    font-size: 12px;
+    width: 90px;
+    margin-top: -50px;
+  }
+  .states .list__company li {
+    font-size: 12px;
+    width: 100px;
+    
   }
   main {
     padding: 0 5px;

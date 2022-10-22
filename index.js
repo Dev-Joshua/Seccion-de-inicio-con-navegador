@@ -3,18 +3,26 @@ window.addEventListener("DOMContentLoaded", (event)=> {
     // console.log("Dom complated")
     const menuBtn = document.getElementById("menu");
     const nav = document.querySelector(".nav .list-nav");
-    const lista = document.getElementById("list");
+    const listaF = document.getElementById("list");
     const listNav = document.querySelector(".states .open-list")
+    const listaC = document.getElementById("listCompany");
+    const listNavC = document.querySelector(".states .list__company")
 
-    //Añado el evento click al boton menuBtn
+    //Añado el evento click al boton(menuBtn) 
     menuBtn.addEventListener("click", (event) => {
         menuBtn.classList.toggle("salir");
         nav.classList.toggle("visible");
     })
 
-    lista.addEventListener("click", (event) => {
-        lista.classList.toggle("cerrar");
+    //Añado el evento a los contenedores de las listas desplegables(ul)
+    listaF.addEventListener("click", (event) => {
+        listaF.classList.toggle("cerrar");
         listNav.classList.toggle("visible");
+    })
+
+    listaC.addEventListener("click", (event) => {
+        listaC.classList.toggle("cerrar");
+        listNavC.classList.toggle("visible");
     })
 })
 
@@ -26,8 +34,5 @@ let listElements = document.querySelectorAll('.states');
 listElements.forEach(listElement => {
     listElement.addEventListener('click', () => {
        listElement.classList.toggle('arrow'); 
-
-    //    let height = 0;
-    //    let menu = listElement.nextElementSibling
     })
 })
