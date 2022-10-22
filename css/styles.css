@@ -7,6 +7,7 @@
 }
 body {
   font-family: 'Epilogue', sans-serif;
+  background-color: hsl(0, 0%, 98%);
 }
 .header {
   padding: 20px;
@@ -34,6 +35,7 @@ body {
   color: hsl(0, 0%, 41%);
   font-weight: bold;
   cursor: pointer;
+  height: 20px;
 }
 .states {
   display: flex;
@@ -43,6 +45,23 @@ body {
 .states img {
   width: 10px;
   height: 6px;
+}
+#list.cerrar #list {
+  display: none;
+}
+#list.salir #list {
+  display: block;
+}
+#open-list.visible {
+  display: flex;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: -90px;
+  /* padding: 5px; */
+  /* gap: 20px; */
+  height: auto;
+  width: 180px;
+  box-shadow: 5px 5px 5px hsl(0, 0%, 41%);
 }
 .buttons button {
   height: 50px;
@@ -64,8 +83,36 @@ body {
 #menu {
   display: none;
 }
+.states .open-list {
+  /* width: 150px; */
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.states .open-list div {
+  display: flex;
+  text-align: justify;
+  margin-left: 10px;
+}
+.states .open-list img {
+  width: 20px;
+  height: 20px;
+}
+.states .open-list {
+  display: none;
+}
+.arrow .list__arrow {
+  transform: rotate(270deg);
+}
+.list__arrow {
+  transition: transform .3s;
+}
 main {
-  padding: 0px 100px;
+  padding: 50px;
+  margin-top: 80px;
 }
 .container-main {
   display: flex;
@@ -107,7 +154,7 @@ main {
 }
 .client-icon {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   margin-top: 100px;
 }
 .client-icon img {
@@ -164,7 +211,7 @@ main {
   }
   .description {
     gap: 20px;
-    width: 80%;
+    width: 100%;
     align-items: center;
   }
   .description h1 {
@@ -173,7 +220,7 @@ main {
   }
   .description p {
     font-size: 14px;
-    width: 50vh;
+    width: 45vh;
   }
   .client-icon {
     justify-content: center;
@@ -182,6 +229,9 @@ main {
 }
 
 @media (max-width: 400px) {
+  .buttons {
+    display: block;
+  }
   #menu {
     display: block;
     color: #000;
@@ -209,14 +259,15 @@ main {
     flex-direction: column;
     position: absolute;
     right: 0;
-    top: 0px;
+    top: 380px;
     background-color: #fff;
     width: 50%;
     margin-left: 0;
     font-size: 16px;
-    height: 100%;
+    height: 60%;
     /* opacity: 0.8; */
     gap: 20px;
+    z-index: 9999;
   }
   .list-nav ul li, .list-nav .states img {
     font-weight: 500;
@@ -239,6 +290,7 @@ main {
   .description h1 {
     font-size: 30px;
     width: 50vh;
+    text-align: center;
   }
   .client-icon {
     margin-top: 50px;
