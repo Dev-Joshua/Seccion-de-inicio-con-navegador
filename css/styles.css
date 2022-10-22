@@ -130,19 +130,20 @@ body {
   transition: transform .3s;
 }
 main {
-  padding: 50px;
+  padding: 50px 150px;
   margin-top: -80px;
 }
 .container-main {
   display: flex;
   margin: 20px;
   gap: 50px;
+  /* align-items: center; */
 }
 .description {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
   width: 50%;
 }
 .description h1 {
